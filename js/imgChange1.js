@@ -1,4 +1,5 @@
-window.onload = function() {
+window.addEventListener("load", turnimg, false);
+function turnimg () {
 	var oLi = document.getElementById("rollButton3").getElementsByTagName("li");
 	var oPic = document.getElementById("rollImg3");
 	var oTxt = document.getElementById("rollTxt3");

@@ -1,4 +1,17 @@
-window.onload = function() {
+// window.onload = function
+// 这种写法相当于把window对象的onload属性赋值为一个函数
+// window是全局对象
+// 即使是在多个文件里重复对window的属性赋值
+// 也会互相覆盖
+
+// e.g.
+window.a = 1
+window.a = 2
+console.log('我是try.js里的a：' + a) // 2，全局对象的属性可直接调用
+console.log('我是try.js里的window.a：' + window.a) // 2
+
+window.addEventListener("load", turnimg, false);
+function turnimg () {
 	var oLi = document.getElementById("rollButton").getElementsByTagName("li");
 	var oPic = document.getElementById("rollImg");
 	var oTxt = document.getElementById("rollTxt");
@@ -46,6 +59,5 @@ window.onload = function() {
 
 	function getStyle(obj, attr) {
 		return obj.currentStyle ? parseInt(obj.currentStyle[attr]) : parseInt(getComputedStyle(obj)[attr]);
-
 	}
 }
