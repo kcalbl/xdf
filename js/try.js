@@ -1,10 +1,9 @@
 // 利用参数
 window.onload = function() {
-	turnimg("rollButton", "rollImg", "rollTxt")
-	turnimg("rollButton2", "rollImg2", "rollTxt2")
-	turnimg("rollButton3", "rollImg3", "rollTxt3")
-	turnimg("rollButton4", "rollImg4", "rollTxt4")
-	turnimg("rollButton5", "rollImg5", "rollTxt5")
+	// 循环调用，id不规律的话可以借助数组
+	for (var i = 1; i <= 5; i++) {
+		turnimg("rollButton" + i, "rollImg" + i, "rollTxt" + i)
+	}
 }
 
 function turnimg (button, img, txt) {
