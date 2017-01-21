@@ -1,20 +1,16 @@
-// window.onload = function
-// 这种写法相当于把window对象的onload属性赋值为一个函数
-// window是全局对象
-// 即使是在多个文件里重复对window的属性赋值
-// 也会互相覆盖
+// 利用参数
+window.onload = function() {
+	turnimg("rollButton", "rollImg", "rollTxt")
+	turnimg("rollButton2", "rollImg2", "rollTxt2")
+	turnimg("rollButton3", "rollImg3", "rollTxt3")
+	turnimg("rollButton4", "rollImg4", "rollTxt4")
+	turnimg("rollButton5", "rollImg5", "rollTxt5")
+}
 
-// e.g.
-window.a = 1
-window.a = 2
-console.log('我是try.js里的a：' + a) // 2，全局对象的属性可直接调用
-console.log('我是try.js里的window.a：' + window.a) // 2
-
-window.addEventListener("load", turnimg, false);
-function turnimg () {
-	var oLi = document.getElementById("rollButton").getElementsByTagName("li");
-	var oPic = document.getElementById("rollImg");
-	var oTxt = document.getElementById("rollTxt");
+function turnimg (button, img, txt) {
+	var oLi = document.getElementById(button).getElementsByTagName("li");
+	var oPic = document.getElementById(img);
+	var oTxt = document.getElementById(txt);
 	var oLiLen = oLi.length;
 	var timerl = null;
 
