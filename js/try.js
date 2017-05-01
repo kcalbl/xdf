@@ -1,7 +1,15 @@
+// 利用参数
 window.onload = function() {
-	var oLi = document.getElementById("rollButton").getElementsByTagName("li");
-	var oPic = document.getElementById("rollImg");
-	var oTxt = document.getElementById("rollTxt");
+	// 循环调用，id不规律的话可以借助数组
+	for (var i = 1; i <= 5; i++) {
+		turnimg("rollButton" + i, "rollImg" + i, "rollTxt" + i)
+	}
+}
+
+function turnimg (button, img, txt) {
+	var oLi = document.getElementById(button).getElementsByTagName("li");
+	var oPic = document.getElementById(img);
+	var oTxt = document.getElementById(txt);
 	var oLiLen = oLi.length;
 	var timerl = null;
 
@@ -46,6 +54,5 @@ window.onload = function() {
 
 	function getStyle(obj, attr) {
 		return obj.currentStyle ? parseInt(obj.currentStyle[attr]) : parseInt(getComputedStyle(obj)[attr]);
-
 	}
 }
